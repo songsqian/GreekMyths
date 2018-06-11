@@ -1,0 +1,79 @@
+\documentclass{article}
+\def\xcolorversion{2.00}
+\def\xkeyvalversion{1.8}
+
+\usepackage[version=0.96]{pgf}
+\usepackage{tikz,url}
+\usetikzlibrary{arrows,shapes,snakes,automata,backgrounds,petri}
+\usetikzlibrary{positioning}
+\usepackage[latin1]{inputenc}
+\begin{document}
+\raggedright
+
+\tikzstyle{block} = [rectangle, draw, fill=gray!10,
+%    text width=3.25em,
+ text centered, rounded corners, minimum height=2em]
+\tikzstyle{line} = [draw, very thick, color=black!50, -latex']
+\tikzstyle{cloud} = [draw, ellipse,fill=gray!30, node distance=2.cm,
+    minimum height=1.75em, minimum width=3.5em]
+\tikzstyle{lb} = [text width=1.2cm]
+
+  \resizebox{0.95\textwidth}{!}{
+
+\begin{tikzpicture}[scale=2, node distance = 2.5cm, text width=1.25cm, 
+on grid, auto]
+
+    % Place nodes
+   \node [block, text width=2cm] (a) {Eurynome};
+\node [lb, right of=a] (an) {The creator};
+   \node [cloud, align=center, below of=a](b){Universal Egg};
+   \node [cloud, right of=a,yshift=-1cm, xshift=1cm] (c) {Ophion};
+\node [lb, right of=c] (cn) {North wind}; 
+
+    \node [cloud, align=left, below of=b, xshift=-6cm] (b1) {Sun (illumination)};
+\node [lb, below of=b1, yshift=0.5cm] (b1n) {Theia\&\\ Hyperion\\ (Helius)};
+
+    \node [cloud, right of=b1] (b2) {Moon (enchantment)};
+\node [lb, below of=b2, yshift=0.25cm] (b2n) {Phoebe\&\\ Atlas\\ (Selene)};
+
+    \node [cloud, right of=b2] (b3) {Mars (growth)};
+\node [lb, below of=b3, yshift=0.5cm] (b3n) {Dione\&\\ Crius\\ (Ares)};
+
+    \node [cloud, right of=b3] (b4) {Mercury\\ (wisdom)};
+\node [lb, below of=b4, yshift=0.25cm] (b4n) {Metis\&\\  Coens\\ (Hermes/\\ Apollo)};
+
+    \node [cloud, right of=b4] (b5) {Jupiter (law)};
+\node [lb, below of=b5, yshift=0.5cm] (b5n) {Themis\&\\ Eurymedon\\ (Zeus)};
+
+    \node [cloud, right of=b5] (b6) {Venus (love)};
+\node [lb, below of=b6, yshift=0.5cm] (b6n) {Tethys\&\\ Oceanus\\ (Aphrodite)};
+
+    \node [cloud, right of=b6] (b7) {Saturn (peace)};
+\node [lb, below of=b7, yshift=.5cm] (b7n) {Rhea\&\\ Cronus\\ (Cronus)};
+
+    \node [cloud, below of=b,align=center, yshift=-4.5cm] (d) {Earth};
+    \node [lb, below of=d, align=center,yshift=1.5cm] (d1) {Pelasgus
+      of\\ Arcadia};
+\node [lb, right of=d1] (d1n) {First\\ man};
+    % Draw edges
+    \path [line] (a) -- (b);
+    \path [line] (c) -- (b);
+%    \path [line] (b) -- (b1);
+\draw [->, very thick] (b) .. controls ([xshift=-2cm] b) and
+([xshift=0.5cm, yshift=1cm] b1) .. (b1); 
+    \path [line] (b) -- (b2);
+    \path [line] (b) -- (b3);
+    \path [line] (b) -- (b4);
+    \path [line] (b) -- (b5);
+    \path [line] (b) -- (b6);
+%    \path [line] (b) -- (b7);
+\draw [->, very thick] (b) .. controls ([xshift=2cm] b) and
+([xshift=-0.5cm, yshift=1cm] b7) .. (b7);
+%    \path [line] (b) -- (d);
+\draw[->, very thick] (b) .. controls ([xshift=-5.cm, yshift=1cm] b)
+and ([xshift=-5cm] d) .. (d);
+
+
+\end{tikzpicture}
+}
+\end{document}
