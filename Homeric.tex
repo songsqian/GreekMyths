@@ -1,0 +1,26 @@
+\begin{tikzpicture}[scale=2, node distance = 2.5cm, text width=1.25cm, 
+on grid, auto]
+
+    % Place nodes
+   \node [block, text width=3cm] (a) {Black-Winged\\ Night};
+\node [lb, right of=a] (an) {A Goddess};
+   \node [cloud, align=center, text width=3cm, below of=a](b){Silver Egg\\ (in Darkness)};
+   \node [cloud, right of=a,yshift=-1cm, xshift=1cm] (c) {Wind};
+\node [lb, right of=c] (cn) {Order\\ Justice}; 
+
+    \node [cloud, align=left, below of=b, text width=1cm] (d) {Eros/ \\ Phanes};
+    \node [cloud, below of=d, text width=1cm] (d1) {Earth};
+    \node [cloud, right of=d1, text width=1cm] (d2) {Sun};
+    \node [cloud, left of=d1, text width=1cm] (d3) {Moon};
+
+    \node [lb, right of=d, xshift=1.75cm, text width=4cm] (dn) {double-sexed\\golden-winged\\four-headed};
+    \node [lb, right of=dn, text width=3cm] (dnn) {Pha\"{e}theon\\ Protogenus\\ 4 seasons};
+    \node [lb, left of=d] (dn2) {with Mother Rhea};
+    % Draw edges
+    \path [line] (a) -- (b);
+    \path [line] (c) -- (b);
+    \path [line] (b) -- (d);
+    \path [line] (d) -- (d1);
+    \path [line] (d) -- (d2);
+    \path [line] (d) -- (d3);
+\end{tikzpicture}
